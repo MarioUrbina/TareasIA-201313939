@@ -1,7 +1,11 @@
-//  2021 Luis Espino
+
 // Tarea No.2
 
 
+estados_empiezo = [
+    ["A", "DIRTY", "DIRTY"],
+    ["B", "DIRTY", "DIRTY"],
+]
 function reflex_agent(location, state) {
     if (state == "DIRTY") return "CLEAN";
     else if (location == "A") return "RIGHT";
@@ -9,9 +13,7 @@ function reflex_agent(location, state) {
 }
 
 function funcionamiento(states) {
-    console.log("Location:"+ states[0] + " | CUARTO A:" + states[1] + " | CUARTO B:" + states[2] );
-     var st = states[0] == 'B'
-    console.log("Location:"+ states[0] + " | CUARTO A:" + states[1] + " | CUARTO B:" + states[2] );
+
 
     var location = states[0];		
     var state = states[0] == "A" ? states[1] : states[2];
@@ -28,7 +30,16 @@ function funcionamiento(states) {
 
 var states = ["A","DIRTY","DIRTY"];
 
-funcionamiento(states);
+function empiezo() {
+    for (let estado of estados_empiezo) {
+        console.log("=======================================")
+        console.log("Location: A | Action: DIRTY")
+        console.log("Location: B | Action: DIRTY")
+        console.log("=======================================")
+        funcionamiento(estado)
+    }
+}
+empiezo();
 
 
 
